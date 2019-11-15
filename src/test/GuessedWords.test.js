@@ -46,6 +46,7 @@ describe("if there are words guessed", () => {
     { guessedWord: "agile", letterMatchCount: 1 },
     { guessedWord: "party", letterMatchCount: 5 }
   ];
+
   beforeEach(() => {
     wrapper = setup({ guessedWords });
   });
