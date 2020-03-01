@@ -10,7 +10,7 @@ const Congrats = props => {
   if (props.success) {
     return (
       <div data-test="component-congrats" className="alert alert-success">
-        <p data-test="congrats-message">Congrats! You guessed the word!</p>
+        <h1 data-test="congrats-message">Congrats! You guessed the word!</h1>
       </div>
     );
   } else {
