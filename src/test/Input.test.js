@@ -6,16 +6,17 @@ import Input from "../Input";
 
 const setup = (initialState = {}) => {
   const store = storeFactory(initialState);
-  const wrapper = shallow(<Input store={store} />);
+  const wrapper = shallow(<Input store={store} />)
+    .dive()
+    .dive();
 
-  console.log(wrapper.debug());
+  return wrapper;
+  // console.log(wrapper.debug());
   // This gave us the HigherOrder Component that redux wraps the shallow rendered component in.
   // <ContextProvider value={{...}}>
   //   <Input store={{...}} dispatch={[Function: dispatch]} />
   // </ContextProvider>
 };
-
-setup();
 
 describe("render", () => {
   describe("while the word has not been guessed", () => {
