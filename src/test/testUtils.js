@@ -1,4 +1,19 @@
 import checkPropTypes from "check-prop-types";
+import { createStore } from "redux";
+
+import rootReducer from "../reducers/";
+
+/**
+ * Create a testing store with imported reducers, middleware, and initial state.
+ * globals: rootReducer
+ * @param {object} initialState
+ * @function storeFactory
+ * @returns {Store} - Redux store
+ */
+
+export const storeFactory = initialState => {
+  return createStore(rootReducer, initialState);
+};
 
 /**
  * Return node(s) with the given data-test attribute.
@@ -19,6 +34,7 @@ export const findByTestAttr = (wrapper, val) => {
  * @param {Component} component
  * @param {object} conformingProps
  */
+
 export const checkProps = (component, conformingProps) => {
   const propError = checkPropTypes(
     component.propTypes,
